@@ -20,11 +20,6 @@
 \numberwithin{section}{chapter}
 \numberwithin{equation}{chapter}
 
-%    For a single index; for multiple indexes, see the manual
-%    "Instructions for preparation of papers and monographs:
-%    AMS-LaTeX" (instr-l.pdf in the AMS-LaTeX distribution).
-\makeindex
-
 \begin{document}
 
 \frontmatter
@@ -35,33 +30,9 @@
 
 %    author one information
 \author{The Author}
-\address{}
-\curraddr{}
-\email{}
-\thanks{}
 
-\keywords{}
-
-\date{01/01/1970}
-
-\cleardoublepage
-
-% \begin{abstract}
-%     This is a per-chapter abstract, not a book-wide abstract!!!
-%     Never use here!
-% \end{abstract}
 
 \maketitle
-
-%    Dedication.  If the dedication is longer than a line or two,
-%    remove the centering instructions and the line break.
-%\cleardoublepage
-%\thispagestyle{empty}
-%\vspace*{13.5pc}
-%\begin{center}
-%  Dedication text (use \\[2pt] for line break if necessary)
-%\end{center}
-%\cleardoublepage
 
 \tableofcontents
 
@@ -71,11 +42,11 @@
 
 \mainmatter
 %    Include main chapters here.
-\include{tex/chapters/first}
+\include{tex/ch/intro}
 
 \appendix
 %    Include appendix "chapters" here.
-\include{tex/appendices/a}
+\include{tex/ap/a}
 
 \backmatter
 %    Bibliography styles amsplain or harvard are also acceptable.
@@ -85,7 +56,3 @@
 \printindex
 
 \end{document}
-
-%-----------------------------------------------------------------------
-% End of amsbook-template.tex
-%-----------------------------------------------------------------------
