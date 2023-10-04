@@ -1,13 +1,18 @@
 %% preamble
-    \documentclass[a4paper,twoside]{amsbook}
+    \documentclass[a4paper,twoside,12pt]{scrbook}
+
+    \usepackage[british]{babel}  %% affects date style
+
+    \usepackage[safeinputenc,backend=biber]{biblatex}
+    \addbibresource{bib/main.bib}
 
     \usepackage[svgnames]{xcolor}
 
     % This package should be (almost) at the end - https://tex.stackexchange.com/a/326953
     \usepackage[colorlinks]{hyperref}
     \hypersetup{
-        linkcolor = DarkRed,
-        citecolor = Green,
+        % linkcolor = DarkRed,
+        citecolor = DarkGreen,
         urlcolor  = DarkBlue
     }
 
@@ -21,9 +26,9 @@
         % Print front matter meta
         \maketitle
         {
-            \hypersetup{
-              linkcolor = .
-            }
+            % \hypersetup{
+            %   linkcolor = .
+            % }
 
             \tableofcontents
         }
@@ -41,5 +46,5 @@
         \input{tex/ap/a}
 
     \backmatter
-    % Biblio
+        \printbibliography[heading=bibintoc]
 \end{document}
