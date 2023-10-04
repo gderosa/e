@@ -1,5 +1,5 @@
 %% preamble
-    \documentclass[a4paper,twoside,12pt]{scrbook}
+    \documentclass[b5paper,twoside]{scrbook}
 
     \usepackage[british]{babel}  %% affects date style
 
@@ -11,7 +11,7 @@
     % This package should be (almost) at the end - https://tex.stackexchange.com/a/326953
     \usepackage[colorlinks]{hyperref}
     \hypersetup{
-        % linkcolor = DarkRed,
+        %linkcolor = DarkRed,
         citecolor = DarkGreen,
         urlcolor  = DarkBlue
     }
@@ -25,13 +25,11 @@
 
         % Print front matter meta
         \maketitle
-        {
-            % \hypersetup{
-            %   linkcolor = .
-            % }
 
-            \tableofcontents
-        }
+        % https://tex.stackexchange.com/a/65547
+        \cleardoublepage
+        \pdfbookmark[section]{\contentsname}{toc}
+        \tableofcontents
 
         % Unnumbered chapters (Abstract, Acknowledgments, etc.)
         \input{tex/pre/abs.tex}
