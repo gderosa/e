@@ -1,58 +1,45 @@
-\documentclass[twosides]{amsbook}
+%% preamble
+    \documentclass[a4paper,twoside]{amsbook}
 
-%    For use when working on individual chapters
-%\includeonly{}
+    \usepackage[svgnames]{xcolor}
 
-%    Include referenced packages here.
-\usepackage{}
+    % This package should be (almost) at the end - https://tex.stackexchange.com/a/326953
+    \usepackage[colorlinks]{hyperref}
+    \hypersetup{
+        linkcolor = DarkRed,
+        citecolor = Green,
+        urlcolor  = DarkBlue
+    }
 
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}[theorem]{Lemma}
-
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{xca}[theorem]{Exercise}
-
-\theoremstyle{remark}
-\newtheorem{remark}[theorem]{Remark}
-
-\numberwithin{section}{chapter}
-\numberwithin{equation}{chapter}
-
+% Document
 \begin{document}
+    \frontmatter
+        % Metadata
+        \title{The Title}
+        \author{The Author}
 
-\frontmatter
+        % Print front matter meta
+        \maketitle
+        {
+            \hypersetup{
+              linkcolor = .
+            }
 
-\title{The Title}
+            \tableofcontents
+        }
 
-%    Remove any unused author tags.
+        % Unnumbered chapters (Abstract, Acknowledgments, etc.)
+        \input{tex/pre/abs.tex}
+        \input{tex/pre/ack.tex}
 
-%    author one information
-\author{The Author}
+    \mainmatter
+        % Proper chapters
+        \input{tex/ch/intro}
 
+        % Appendices
+        \appendix
+        \input{tex/ap/a}
 
-\maketitle
-
-\tableofcontents
-
-%    Include unnumbered chapters (preface, acknowledgments, etc.) here.
-\include{tex/pre/abs}
-\include{tex/pre/ack}
-
-\mainmatter
-%    Include main chapters here.
-\include{tex/ch/intro}
-
-\appendix
-%    Include appendix "chapters" here.
-\include{tex/ap/a}
-
-\backmatter
-%    Bibliography styles amsplain or harvard are also acceptable.
-\bibliographystyle{amsalpha}
-\bibliography{}
-%    See note above about multiple indexes.
-\printindex
-
+    \backmatter
+    % Biblio
 \end{document}
