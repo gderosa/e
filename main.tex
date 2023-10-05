@@ -4,28 +4,25 @@
     \usepackage[british]{babel}  %% affects date style
 
     \usepackage[safeinputenc,backend=biber,style=numeric-comp]{biblatex}
-    \addbibresource{bib/main.bib}
+    \addbibresource{bib/mai,n.bib}
+
+    \usepackage{setspace}
+
+    \setlength{\parindent}{2em}
 
     \usepackage[svgnames,dvipsnames]{xcolor}
 
     % This package should be (almost) at the end - https://tex.stackexchange.com/a/326953
     \usepackage[colorlinks]{hyperref}
     \hypersetup{
-        % citecolor = DarkGreen,
-        % linkcolor = [RGB]{200,0,0},
-        % linkcolor = DarkBlue,
-        % citecolor = DarkBlue,
-        % urlcolor  = DarkBlue
-        linkcolor = [RGB]{140,100,150},
-        citecolor = [RGB]{140,100,150},
-        urlcolor  = [RGB]{140,100,150}
+        linkcolor = [RGB]{64,0,32},
+        citecolor = DarkGreen,
+        urlcolor  = [RGB]{64,0,32}
     }
-
 
 % Document
 \begin{document}
     \newcommand{\term}[1]{\emph{#1}}
-
 
     \frontmatter
         % Metadata
@@ -33,11 +30,13 @@
         \author{The Author}
 
         % Print front matter meta
+        \date{\small\today}
         \maketitle
+        \date{\today}
 
         % Unnumbered chapters (Abstract, Acknowledgments, etc.)
-        \input{tex/pre/abs.tex}
-        \input{tex/pre/ack.tex}
+        % \input{tex/pre/abs.tex}
+        % \input{tex/pre/ack.tex}
 
         % https://tex.stackexchange.com/a/65547
         \cleardoublepage
@@ -45,8 +44,13 @@
         \tableofcontents
 
     \mainmatter
-        % Proper chapters
+        \begin{onehalfspacing}
+
+        % Regular chapters
         \input{tex/ch/intro}
+        \input{tex/ch/second}
+
+        \end{onehalfspacing}
 
         % Appendices
         \appendix
