@@ -1,4 +1,4 @@
-%% preamble
+%% Preamble
     \documentclass[b5paper,twoside]{scrbook}
 
     \usepackage[british]{babel}  %% affects date style
@@ -11,13 +11,17 @@
     % This package should be (almost) at the end - https://tex.stackexchange.com/a/326953
     \usepackage[colorlinks]{hyperref}
     \hypersetup{
-        %linkcolor = BrickRed,
+        % linkcolor = BrickRed,
         citecolor = DarkGreen,
-        %urlcolor  = DarkBlue
+        % urlcolor  = DarkBlue
     }
+
 
 % Document
 \begin{document}
+    \newcommand{\term}[1]{\emph{#1}}
+
+
     \frontmatter
         % Metadata
         \title{The Title}
@@ -26,14 +30,14 @@
         % Print front matter meta
         \maketitle
 
+        % Unnumbered chapters (Abstract, Acknowledgments, etc.)
+        \input{tex/pre/abs.tex}
+        \input{tex/pre/ack.tex}
+
         % https://tex.stackexchange.com/a/65547
         \cleardoublepage
         \pdfbookmark[section]{\contentsname}{toc}
         \tableofcontents
-
-        % Unnumbered chapters (Abstract, Acknowledgments, etc.)
-        \input{tex/pre/abs.tex}
-        \input{tex/pre/ack.tex}
 
     \mainmatter
         % Proper chapters
